@@ -1,4 +1,4 @@
-<?page title="Romaneo"?>
+<?page id="indexPage" title="Romaneo"?>
 <?link rel="stylesheet" type="text/css"
     href="bootstrap/css/bootstrap.css" ?>
 <zk xmlns:w="client" xmlns:n="xhtml">
@@ -25,14 +25,16 @@
 	<!-- baraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
 
 	<div
-		class="collapse navbar-collapse navbar-ex1-collapse navbar-default">
-		<n:ul class="nav navbar-nav navbar-default"
+		class="collapse navbar-collapse navbar-ex1-collapse navbar-default"
+		apply="controllers.WindowsController">
+		<n:ul class=" nav navbar-nav
+		navbar-default "
 			style="/bootstrap/css/bootstrap.css">
 			<n:li class="active" style="cursor:pointer">
 				<n:a id="monitoringBttn">Inicio</n:a>
 			</n:li>
 			<n:li style="cursor:pointer">
-				<n:a id="travelsBttn">Noticias</n:a>
+				<n:a id="noticias">Noticias</n:a>
 			</n:li>
 			<n:li style="cursor:pointer">
 				<n:a id="masterDataBttn">...</n:a>
@@ -100,8 +102,10 @@
 		</n:ul>
 	</div>
 
-	<window id="win" title="Noticias...!">
-		<iframe style="width:99%; height:400px;border:3px inset;"
-			src="https://prolana.magyp.gob.ar/" />
+	<window id="window" title="Noticias...!" >
+		<include id="ventana" visible="false" style="width:99%; height:400px;border:3px inset;"
+			 />
+		<iframe id="extPage" style="width:99%; height:400px;border:3px inset;"
+			 />
 	</window>
 </zk>
